@@ -1,0 +1,8 @@
+endpoint: http://192.168.99.100:4466
+datamodel: datamodel.graphql
+
+hooks:
+  post-deploy:
+    - echo "Deployment finished"
+    - graphql get-schema --project db
+    - graphql codegen
